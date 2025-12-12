@@ -136,9 +136,13 @@ bindsym $mod+a focus parent
 #take the screenshot using flameshot
 bindsym Print exec flameshot gui
 
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+# Sreen brightness controls (using xbacklight - this was used when using i3 with fedora installation which included gnome)
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+
+# Sreen brightness controls (when using Fedora-i3 spin. It provides brightnessctl for this purpose by default)
+bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl s 5%- 
 
 # Touchpad controls
 # bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -165,11 +169,11 @@ set $ws1 "1:Terminals"
 set $ws2 "2:Browser"
 set $ws3 "3:Code Editor"
 set $ws4 "4:PDFs"
-set $ws5 "5:Gimp"
-set $ws6 "6:File Explorer"
+set $ws5 "5:File Explorer"
+set $ws6 "6:Gimp"
 set $ws7 "7:Libreoffice"
 set $ws8 "8:Media Player"
-set $ws9 "9"
+set $ws9 "9:Telegram"
 set $ws10 "10"
 
 # switch to workspace
@@ -265,12 +269,14 @@ assign [class="Brave-browser"] $ws2
 assign [class="VSCodium"] $ws3
 assign [class="jetbrains-idea-ce"] $ws3
 assign [class="jetbrains-studio"] $ws3
+assign [class="Postman"] $ws3
 assign [class="Evince"] $ws4
-assign [class="Gimp"] $ws5
-assign [class="Thunar"] $ws6
+assign [class="Gimp"] $ws6
+assign [class="Thunar"] $ws5
 assign [class="libreoffice-startcenter"] $ws7
 assign [class="vlc"] $ws8
 assign [class="smplayer"] $ws8
+assign [class="TelegramDesktop"] $ws9
 
 for_window [class="^.*"] border pixel 0
 smart_gaps inverse_outer

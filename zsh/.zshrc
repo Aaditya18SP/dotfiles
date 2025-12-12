@@ -71,6 +71,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # colored-man-pages zsh-autocomplete zsh-autosuggestions
+#colored-man-pages zsh-autocomplete zsh-autosuggestions git
 plugins=(colored-man-pages zsh-autocomplete zsh-autosuggestions git)
 
 source $ZSH/oh-my-zsh.sh
@@ -126,3 +127,5 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$PATH:/home/aadityapal/.modular/bin"
 # eval "$(magic completion --shell zsh)"
+export XDG_CONFIG_HOME="$HOME/.config"
+export PATH="$HOME/Softwares/Flutter/flutter/bin:$PATH"
